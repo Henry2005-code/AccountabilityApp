@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		691883D32CDDEB7400052DA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 691883BA2CDDEB7200052DA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 691883C12CDDEB7200052DA6;
+			remoteInfo = AccountabilityApp;
+		};
+		691883DD2CDDEB7400052DA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 691883BA2CDDEB7200052DA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 691883C12CDDEB7200052DA6;
+			remoteInfo = AccountabilityApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		691883C22CDDEB7200052DA6 /* AccountabilityApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccountabilityApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		691883D22CDDEB7400052DA6 /* AccountabilityAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccountabilityAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		691883DC2CDDEB7400052DA6 /* AccountabilityAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccountabilityAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		691883C42CDDEB7200052DA6 /* AccountabilityApp */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AccountabilityApp;
+			sourceTree = "<group>";
+		};
+		691883D52CDDEB7400052DA6 /* AccountabilityAppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AccountabilityAppTests;
+			sourceTree = "<group>";
+		};
+		691883DF2CDDEB7400052DA6 /* AccountabilityAppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AccountabilityAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		691883BF2CDDEB7200052DA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		691883CF2CDDEB7400052DA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		691883D92CDDEB7400052DA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		691883B92CDDEB7200052DA6 = {
+			isa = PBXGroup;
+			children = (
+				691883C42CDDEB7200052DA6 /* AccountabilityApp */,
+				691883D52CDDEB7400052DA6 /* AccountabilityAppTests */,
+				691883DF2CDDEB7400052DA6 /* AccountabilityAppUITests */,
+				691883C32CDDEB7200052DA6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		691883C32CDDEB7200052DA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				691883C22CDDEB7200052DA6 /* AccountabilityApp.app */,
+				691883D22CDDEB7400052DA6 /* AccountabilityAppTests.xctest */,
+				691883DC2CDDEB7400052DA6 /* AccountabilityAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		691883C12CDDEB7200052DA6 /* AccountabilityApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 691883E62CDDEB7400052DA6 /* Build configuration list for PBXNativeTarget "AccountabilityApp" */;
+			buildPhases = (
+				691883BE2CDDEB7200052DA6 /* Sources */,
+				691883BF2CDDEB7200052DA6 /* Frameworks */,
+				691883C02CDDEB7200052DA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				691883C42CDDEB7200052DA6 /* AccountabilityApp */,
+			);
+			name = AccountabilityApp;
+			packageProductDependencies = (
+			);
+			productName = AccountabilityApp;
+			productReference = 691883C22CDDEB7200052DA6 /* AccountabilityApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		691883D12CDDEB7400052DA6 /* AccountabilityAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 691883E92CDDEB7400052DA6 /* Build configuration list for PBXNativeTarget "AccountabilityAppTests" */;
+			buildPhases = (
+				691883CE2CDDEB7400052DA6 /* Sources */,
+				691883CF2CDDEB7400052DA6 /* Frameworks */,
+				691883D02CDDEB7400052DA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				691883D42CDDEB7400052DA6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				691883D52CDDEB7400052DA6 /* AccountabilityAppTests */,
+			);
+			name = AccountabilityAppTests;
+			packageProductDependencies = (
+			);
+			productName = AccountabilityAppTests;
+			productReference = 691883D22CDDEB7400052DA6 /* AccountabilityAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		691883DB2CDDEB7400052DA6 /* AccountabilityAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 691883EC2CDDEB7400052DA6 /* Build configuration list for PBXNativeTarget "AccountabilityAppUITests" */;
+			buildPhases = (
+				691883D82CDDEB7400052DA6 /* Sources */,
+				691883D92CDDEB7400052DA6 /* Frameworks */,
+				691883DA2CDDEB7400052DA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				691883DE2CDDEB7400052DA6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				691883DF2CDDEB7400052DA6 /* AccountabilityAppUITests */,
+			);
+			name = AccountabilityAppUITests;
+			packageProductDependencies = (
+			);
+			productName = AccountabilityAppUITests;
+			productReference = 691883DC2CDDEB7400052DA6 /* AccountabilityAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		691883BA2CDDEB7200052DA6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1610;
+				LastUpgradeCheck = 1610;
+				TargetAttributes = {
+					691883C12CDDEB7200052DA6 = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					691883D12CDDEB7400052DA6 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = 691883C12CDDEB7200052DA6;
+					};
+					691883DB2CDDEB7400052DA6 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = 691883C12CDDEB7200052DA6;
+					};
+				};
+			};
+			buildConfigurationList = 691883BD2CDDEB7200052DA6 /* Build configuration list for PBXProject "AccountabilityApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 691883B92CDDEB7200052DA6;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 691883C32CDDEB7200052DA6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				691883C12CDDEB7200052DA6 /* AccountabilityApp */,
+				691883D12CDDEB7400052DA6 /* AccountabilityAppTests */,
+				691883DB2CDDEB7400052DA6 /* AccountabilityAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		691883C02CDDEB7200052DA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		691883D02CDDEB7400052DA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		691883DA2CDDEB7400052DA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		691883BE2CDDEB7200052DA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		691883CE2CDDEB7400052DA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		691883D82CDDEB7400052DA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		691883D42CDDEB7400052DA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 691883C12CDDEB7200052DA6 /* AccountabilityApp */;
+			targetProxy = 691883D32CDDEB7400052DA6 /* PBXContainerItemProxy */;
+		};
+		691883DE2CDDEB7400052DA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 691883C12CDDEB7200052DA6 /* AccountabilityApp */;
+			targetProxy = 691883DD2CDDEB7400052DA6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		691883E42CDDEB7400052DA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		691883E52CDDEB7400052DA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		691883E72CDDEB7400052DA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AccountabilityApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FYA.AccountabilityApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		691883E82CDDEB7400052DA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AccountabilityApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FYA.AccountabilityApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		691883EA2CDDEB7400052DA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FYA.AccountabilityAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AccountabilityApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AccountabilityApp";
+			};
+			name = Debug;
+		};
+		691883EB2CDDEB7400052DA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FYA.AccountabilityAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AccountabilityApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AccountabilityApp";
+			};
+			name = Release;
+		};
+		691883ED2CDDEB7400052DA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FYA.AccountabilityAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AccountabilityApp;
+			};
+			name = Debug;
+		};
+		691883EE2CDDEB7400052DA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FYA.AccountabilityAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AccountabilityApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		691883BD2CDDEB7200052DA6 /* Build configuration list for PBXProject "AccountabilityApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				691883E42CDDEB7400052DA6 /* Debug */,
+				691883E52CDDEB7400052DA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		691883E62CDDEB7400052DA6 /* Build configuration list for PBXNativeTarget "AccountabilityApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				691883E72CDDEB7400052DA6 /* Debug */,
+				691883E82CDDEB7400052DA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		691883E92CDDEB7400052DA6 /* Build configuration list for PBXNativeTarget "AccountabilityAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				691883EA2CDDEB7400052DA6 /* Debug */,
+				691883EB2CDDEB7400052DA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		691883EC2CDDEB7400052DA6 /* Build configuration list for PBXNativeTarget "AccountabilityAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				691883ED2CDDEB7400052DA6 /* Debug */,
+				691883EE2CDDEB7400052DA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 691883BA2CDDEB7200052DA6 /* Project object */;
+}
