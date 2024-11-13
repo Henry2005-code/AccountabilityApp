@@ -1,14 +1,11 @@
-//
-//  AccountabilityAppApp.swift
-//  AccountabilityApp
-//
-//  Created by Henry Fowobaje on 11/8/24.
-//
-
+// AccountabilityApp.swift
 import SwiftUI
+import Firebase
 
 @main
 struct AccountabilityAppApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

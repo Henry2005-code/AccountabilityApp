@@ -1,24 +1,18 @@
-//
-//  ContentView.swift
-//  AccountabilityApp
-//
-//  Created by Henry Fowobaje on 11/8/24.
-//
-
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
+    @ObservedObject var viewModel = AuthenticationViewModel()
 
-#Preview {
-    ContentView()
+    var body: some View {
+        Group {
+            if viewModel.user != nil {
+                MainView(viewModel: viewModel)
+            } else {
+                SignupView(viewModel: viewModel)
+            }
+        }
+        .onAppear {
+            self.viewModel.listenToAuthState()
+        }
+    }
 }

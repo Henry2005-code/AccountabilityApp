@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>242468534907-o3eb5cl4qfnl1hfncu7kbunhcgmk0dsk.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.242468534907-o3eb5cl4qfnl1hfncu7kbunhcgmk0dsk</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDHGOUUXbP71AE4Yh1iSUkoChYzcO7kx2Q</string>
+	<key>GCM_SENDER_ID</key>
+	<string>242468534907</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>FYA.AccountabilityApp</string>
+	<key>PROJECT_ID</key>
+	<string>accountabilityapp-8d47f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>accountabilityapp-8d47f.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:242468534907:ios:026f64b846ceef7fc3c0de</string>
+</dict>
+</plist>
