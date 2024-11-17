@@ -5,7 +5,7 @@ import GoogleSignIn
 
 class AuthenticationViewModel: ObservableObject {
     @Published var user: User?
-    
+        
     private var authStateHandle: AuthStateDidChangeListenerHandle?
     
     init() {
@@ -16,6 +16,10 @@ class AuthenticationViewModel: ObservableObject {
         authStateHandle = Auth.auth().addStateDidChangeListener { [weak self] auth, user in
             self?.user = user
         }
+    }
+    
+    var isAuthenticated: Bool {
+        return user != nil
     }
     
     func signUp(email: String, password: String, completion: @escaping (Error?) -> Void) {

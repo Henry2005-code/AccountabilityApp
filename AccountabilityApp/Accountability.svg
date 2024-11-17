@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100">
+  <defs>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#9C27B0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4A148C;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Text -->
+  <text x="10" y="60" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="url(#textGradient)">
+    Accountability
+  </text>
+  
+  <!-- Ascending Steps -->
+  <g transform="translate(180, 0)">
+    <rect x="10" y="70" width="20" height="20" fill="#9C27B0" />
+    <rect x="30" y="50" width="20" height="40" fill="#7B1FA2" />
+    <rect x="50" y="30" width="20" height="60" fill="#6A1B9A" />
+    <rect x="70" y="10" width="20" height="80" fill="#4A148C" />
+    <polyline points="20,70 40,50 60,30 80,10" fill="none" stroke="#E1BEE7" stroke-width="4" />
+  </g>
+</svg>

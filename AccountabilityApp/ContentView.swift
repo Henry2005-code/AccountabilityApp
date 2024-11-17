@@ -1,18 +1,23 @@
+// ContentView.swift
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var viewModel = AuthenticationViewModel()
+    @StateObject var authViewModel = AuthenticationViewModel()
 
     var body: some View {
-        Group {
-            if viewModel.user != nil {
-                MainView(viewModel: viewModel)
+        NavigationView {
+            if authViewModel.user != nil {
+                GoalsListView()
             } else {
-                SignupView(viewModel: viewModel)
+                LoginView()
             }
         }
-        .onAppear {
-            self.viewModel.listenToAuthState()
-        }
+        .environmentObject(authViewModel)
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
 }
