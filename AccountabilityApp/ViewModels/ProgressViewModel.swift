@@ -1,66 +1,72 @@
 import Foundation
 import FirebaseFirestore
+import FirebaseAuth
 
 class ProgressViewModel: ObservableObject {
     @Published var progressEntries: [Progress] = []
-    private let db = Firestore.firestore()
-    private let goalsCollection = "goals"
-    
-    // Reference to the specific goal document
-    private var goalId: String
-    
+    private let firebaseService = FirebaseService()
+    private var listenerRegistration: ListenerRegistration?
+    private let goalId: String
+
     init(goalId: String) {
         self.goalId = goalId
-        fetchProgressEntries()
+        setupProgressListener()
     }
     
-    // Fetch all progress entries for the goal and listen for changes
-    func fetchProgressEntries() {
-        db.collection(goalsCollection).document(goalId).collection("progress")
+    private func setupProgressListener() {
+        // Remove any existing listener
+        listenerRegistration?.remove()
+        
+        // Get the current user's ID
+        guard let userId = Auth.auth().currentUser?.uid else { return }
+        
+        // Setup real-time listener
+        let db = Firestore.firestore()
+        let query = db.collection("progress")
+            .whereField("goalId", isEqualTo: goalId)
+            .whereField("userId", isEqualTo: userId)
             .order(by: "date", descending: true)
-            .addSnapshotListener { snapshot, error in
-                if let error = error {
-                    print("Error fetching progress: \(error)")
-                    return
-                }
-                
-                self.progressEntries = snapshot?.documents.compactMap { document in
+        
+        listenerRegistration = query.addSnapshotListener { [weak self] snapshot, error in
+            guard let documents = snapshot?.documents else {
+                print("Error fetching progress: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self?.progressEntries = documents.compactMap { document -> Progress? in
                     try? document.data(as: Progress.self)
-                } ?? []
-            }
-    }
-    
-    // Add a new progress entry to Firestore and update goal's completion percentage
-    func addProgress(description: String, increment: Double, completion: @escaping (Result<Void, Error>) -> Void) {
-        let newProgress = Progress(description: description, date: Date(), increment: increment)
-        
-        // Add the new progress entry to Firestore
-        do {
-            _ = try db.collection(goalsCollection).document(goalId).collection("progress").addDocument(from: newProgress) { error in
-                if let error = error {
-                    completion(.failure(error))
-                } else {
-                    // After successfully adding the progress entry, update the goal's completion percentage
-                    self.updateGoalCompletion(by: increment, completion: completion)
                 }
             }
-        } catch {
-            completion(.failure(error))
         }
     }
-    
-    // Update goal's completion percentage in Firestore
-    private func updateGoalCompletion(by increment: Double, completion: @escaping (Result<Void, Error>) -> Void) {
-        let goalRef = db.collection(goalsCollection).document(goalId)
-        
-        goalRef.updateData([
-            "completionPercentage": FieldValue.increment(increment)
-        ]) { error in
-            if let error = error {
-                completion(.failure(error))
-            } else {
-                completion(.success(()))
+
+    func addProgress(description: String, increment: Double, completion: @escaping (Result<Void, Error>) -> Void) {
+        guard let userId = Auth.auth().currentUser?.uid else {
+            completion(.failure(NSError(domain: "AuthError", code: -1, userInfo: [NSLocalizedDescriptionKey: "User not authenticated."])))
+            return
+        }
+
+        let progress = Progress(id: nil, goalId: goalId, userId: userId, date: Date(), description: description)
+
+        firebaseService.addProgress(progress) { [weak self] result in
+            switch result {
+            case .success:
+                // The listener will automatically update the UI
+                self?.firebaseService.updateGoalCompletion(goalId: self?.goalId ?? "", increment: increment) { updateResult in
+                    DispatchQueue.main.async {
+                        completion(updateResult)
+                    }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
             }
         }
+    }
+
+    deinit {
+        listenerRegistration?.remove()
     }
 }

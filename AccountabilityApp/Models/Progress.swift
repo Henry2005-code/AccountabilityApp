@@ -1,16 +1,24 @@
-import Foundation
 import FirebaseFirestore
 
 struct Progress: Identifiable, Codable {
     @DocumentID var id: String?
-    var description: String
+    var goalId: String
+    var userId: String
     var date: Date
-    var increment: Double // Percentage increment for progress
+    var description: String
     
-    // Computed property to format date for display
     var formattedDate: String {
         let formatter = DateFormatter()
-        formatter.dateStyle = .short
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
         return formatter.string(from: date)
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case goalId
+        case userId
+        case date
+        case description
     }
 }

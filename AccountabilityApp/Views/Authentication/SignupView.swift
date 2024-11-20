@@ -13,11 +13,11 @@ struct SignupView: View {
 
             // Icon and Title
             VStack(spacing: 8) {
-                Image(systemName: "envelope.fill")
+                Image("Accountability")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 60, height: 60)
-                    .foregroundColor(Color.purple)
+                    .frame(width: 150, height: 150) // Larger size for better emphasis
+                    .padding(.bottom, 8) // Add some padding below the logo for spacing
                 
                 Text("Create an Account")
                     .font(.system(size: 24, weight: .bold))

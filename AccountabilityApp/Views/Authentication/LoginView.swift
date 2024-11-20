@@ -12,18 +12,21 @@ struct LoginView: View {
             Spacer().frame(height: 40)
 
             // Icon and Title
-            VStack(spacing: 8) {
-                Text("Accountability")
-                        .font(.system(size: 28, weight: .bold)) // Adjust font size and weight as needed
-                        .foregroundColor(Color.purple)
-                
+            VStack(spacing: 16) { // Increase spacing to balance the layout
+                Image("Accountability")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 200, height: 200) // Increase the size of the logo
+                    .padding(.bottom, 16) // Add more space below the logo for breathing room
+
                 Text("Welcome Back")
-                    .font(.system(size: 24, weight: .bold))
+                    .font(.system(size: 28, weight: .bold)) // Slightly larger and bold font
                     .foregroundColor(Color.purple)
                 
                 Text("Log in to continue your journey")
-                    .font(.system(size: 16))
+                    .font(.system(size: 18)) // Slightly larger for balance
                     .foregroundColor(.gray)
+                    .multilineTextAlignment(.center) // Ensure proper alignment
             }
 
             Spacer().frame(height: 20)

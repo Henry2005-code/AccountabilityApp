@@ -1,11 +1,3 @@
-//
-//  ActivityItem.swift
-//  AccountabilityApp
-//
-//  Created by Henry Fowobaje on 11/15/24.
-//
-
-
 import SwiftUI
 
 struct ActivityItem: View {
