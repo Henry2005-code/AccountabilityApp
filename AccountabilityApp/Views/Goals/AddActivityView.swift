@@ -2,7 +2,7 @@ import SwiftUI
 
 struct AddActivityView: View {
     var goalId: String
-    var milestone: Milestone?
+    var milestone: Milestone // Changed from optional to non-optional
     @ObservedObject var progressViewModel: ProgressViewModel
     @State private var activityDescription: String = ""
     @Environment(\.presentationMode) var presentationMode
@@ -18,12 +18,10 @@ struct AddActivityView: View {
                         .disabled(isLoading)
                 }
                 
-                if let milestone = milestone {
-                    Section(header: Text("Milestone")) {
-                        Text("Adding activity for: \(milestone.title)")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                    }
+                Section(header: Text("Milestone")) {
+                    Text("Adding activity for: \(milestone.title)")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
                 }
             }
             .navigationTitle("Add Activity")
@@ -65,11 +63,13 @@ struct AddActivityView: View {
     }
 
     private func saveActivity() {
-        let milestoneDescription = milestone != nil ?
-            "\(activityDescription) for \(milestone!.title)" :
-            activityDescription
+        let milestoneDescription = "\(activityDescription)"
 
-        progressViewModel.addProgress(description: milestoneDescription, increment: 0) { result in
+        progressViewModel.addProgress(
+            milestoneId: milestone.id,
+            description: milestoneDescription,
+            increment: 0
+        ) { result in
             DispatchQueue.main.async {
                 isLoading = false
                 switch result {
@@ -82,5 +82,15 @@ struct AddActivityView: View {
                 }
             }
         }
+    }
+}
+
+struct AddActivityView_Previews: PreviewProvider {
+    static var previews: some View {
+        AddActivityView(
+            goalId: "goal123",
+            milestone: Milestone(title: "Milestone 1"),
+            progressViewModel: ProgressViewModel(goalId: "goal123")
+        )
     }
 }

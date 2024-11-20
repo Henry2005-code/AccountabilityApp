@@ -19,3 +19,18 @@ extension UIApplication {
         return topController
     }
 }
+
+extension Progress {
+    func toProgressEntry() -> ProgressEntry? {
+        // Ensure milestoneId is valid
+        guard let milestoneUUID = self.milestoneId as UUID? else { return nil }
+        
+        return ProgressEntry(
+            id: UUID(),
+            milestoneId: milestoneUUID,
+            goalId: self.goalId,
+            description: self.description,
+            date: self.date
+        )
+    }
+}

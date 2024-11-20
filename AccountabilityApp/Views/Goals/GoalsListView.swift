@@ -30,9 +30,20 @@ struct GoalsListView: View {
                 }
             }
             ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: signOut) {
-                    Text("Sign Out")
-                        .foregroundColor(.red)
+                Menu {
+                    Button(action: viewProfile) {
+                        Label("Profile", systemImage: "person.circle")
+                    }
+                    Button(action: viewSettings) {
+                        Label("Settings", systemImage: "gearshape")
+                    }
+                    Button(action: signOut) {
+                        Label("Sign Out", systemImage: "arrow.backward.circle")
+                            .foregroundColor(.red)
+                    }
+                } label: {
+                    Image(systemName: "ellipsis.circle") // Use any appropriate icon
+                        .font(.title2)
                 }
             }
         }
@@ -50,5 +61,13 @@ struct GoalsListView: View {
         } catch {
             print("Error signing out: \(error.localizedDescription)")
         }
+    }
+
+    private func viewProfile() {
+        print("View Profile action")
+    }
+
+    private func viewSettings() {
+        print("View Settings action")
     }
 }

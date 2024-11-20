@@ -1,9 +1,10 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseAuth
+import Combine
 
 class ProgressViewModel: ObservableObject {
-    @Published var progressEntries: [Progress] = []
+    @Published var progressEntries: [ProgressEntry] = []
     private let firebaseService = FirebaseService()
     private var listenerRegistration: ListenerRegistration?
     private let goalId: String
@@ -28,26 +29,32 @@ class ProgressViewModel: ObservableObject {
             .order(by: "date", descending: true)
         
         listenerRegistration = query.addSnapshotListener { [weak self] snapshot, error in
+            guard let self = self else { return }
             guard let documents = snapshot?.documents else {
                 print("Error fetching progress: \(error?.localizedDescription ?? "Unknown error")")
                 return
             }
             
+            let fetchedProgress = documents.compactMap { document -> Progress? in
+                try? document.data(as: Progress.self)
+            }
+            
+            // Map [Progress] to [ProgressEntry]
+            let mappedEntries = fetchedProgress.compactMap { $0.toProgressEntry() }
+            
             DispatchQueue.main.async {
-                self?.progressEntries = documents.compactMap { document -> Progress? in
-                    try? document.data(as: Progress.self)
-                }
+                self.progressEntries = mappedEntries
             }
         }
     }
 
-    func addProgress(description: String, increment: Double, completion: @escaping (Result<Void, Error>) -> Void) {
+    func addProgress(milestoneId: UUID, description: String, increment: Double, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let userId = Auth.auth().currentUser?.uid else {
             completion(.failure(NSError(domain: "AuthError", code: -1, userInfo: [NSLocalizedDescriptionKey: "User not authenticated."])))
             return
         }
 
-        let progress = Progress(id: nil, goalId: goalId, userId: userId, date: Date(), description: description)
+        let progress = Progress(id: nil, goalId: goalId, milestoneId: milestoneId, userId: userId, date: Date(), description: description)
 
         firebaseService.addProgress(progress) { [weak self] result in
             switch result {

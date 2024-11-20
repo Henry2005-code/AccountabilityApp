@@ -26,112 +26,35 @@ struct GoalDetailView: View {
         ScrollView {
             VStack(spacing: 24) {
                 // Goal Title and Progress Section
-                VStack(alignment: .center, spacing: 8) {
-                    Text(goal.title)
-                        .font(.system(size: 28, weight: .bold))
-                        .foregroundColor(Color.purple)
-
-                    HStack(spacing: 16) {
-                        Image(systemName: goal.iconName)
-                            .foregroundColor(.yellow)
-                            .font(.system(size: 32))
-
-                        VStack(alignment: .leading) {
-                            Text("\(Int(goal.completionPercentage))%")
-                                .font(.title2)
-                                .bold()
-                            Text("Completed")
-                                .font(.caption)
-                                .foregroundColor(.gray)
-                        }
-                    }
-
-                    ProgressView(value: goal.completionPercentage, total: 100)
-                        .progressViewStyle(LinearProgressViewStyle(tint: Color.black))
-                        .frame(height: 8)
-                        .padding(.horizontal)
-                }
+                GoalHeaderView(
+                    title: goal.title,
+                    iconName: goal.iconName,
+                    completionPercentage: goal.completionPercentage
+                )
 
                 // Milestones Section
-                VStack(alignment: .leading, spacing: 8) {
-                    HStack {
-                        Text("Milestones")
-                            .font(.headline)
-                        Spacer()
-                        Button(action: { showAddMilestone = true }) {
-                            Text("+ Add Milestone")
-                                .font(.caption)
-                                .foregroundColor(.blue)
-                        }
-                    }
-
-                    ForEach(goal.milestones.indices, id: \.self) { index in
-                        HStack {
-                            Button(action: {
-                                toggleMilestoneCompletion(index: index)
-                            }) {
-                                Image(systemName: goal.milestones[index].isCompleted ? "checkmark.circle.fill" : "circle")
-                                    .foregroundColor(goal.milestones[index].isCompleted ? .green : .gray)
-                            }
-                            Text(goal.milestones[index].title)
-                                .foregroundColor(.gray)
-                                .onTapGesture {
-                                    selectedMilestoneIndex = index
-                                    showEditMilestone = true
-                                }
-                            Spacer()
-                            Button(action: {
-                                showAddActivityForMilestone = goal.milestones[index]
-                            }) {
-                                Image(systemName: "plus")
-                                    .foregroundColor(.blue)
-                            }
-                            Button(action: {
-                                deleteMilestone(index: index)
-                            }) {
-                                Image(systemName: "trash")
-                                    .foregroundColor(.red)
-                            }
-                        }
-                    }
-                }
-
-                // Recent Activity Section
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Recent Activity")
-                        .font(.headline)
-
-                    ForEach(progressViewModel.progressEntries) { progress in
-                        ActivityItem(label: progress.formattedDate, description: progress.description)
-                    }
-                }
+                MilestonesView(
+                    milestones: $goal.milestones,
+                    selectedMilestoneIndex: $selectedMilestoneIndex,
+                    showAddActivityForMilestone: $showAddActivityForMilestone,
+                    progressEntries: progressViewModel.progressEntries, // Now [ProgressEntry]
+                    toggleCompletion: toggleMilestoneCompletion,
+                    deleteMilestone: deleteMilestone,
+                    showAddMilestone: { showAddMilestone = true }
+                )
 
                 // Target Date and Streak
-                HStack(spacing: 16) {
-                    InfoCard(label: "Target Date", value: "\(goal.targetDate.formatted(.dateTime.day().month().year()))")
-                    InfoCard(label: "Streak", value: "\(calculateStreak()) days")
-                }
+                InfoCardsView(
+                    targetDate: "\(goal.targetDate.formatted(.dateTime.day().month().year()))",
+                    streak: "\(calculateStreak()) days"
+                )
 
                 // Action Buttons
-                Button(action: completeGoal) {
-                    Text("Complete Goal")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(LinearGradient(gradient: Gradient(colors: [Color.purple, Color.blue]), startPoint: .leading, endPoint: .trailing))
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-                .disabled(goal.completionPercentage >= 100.0)
-
-                // Direct Delete Button
-                Button(action: deleteGoal) {
-                    Text("Delete Goal")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.red.opacity(0.8))
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
+                ActionButtonsView(
+                    completeGoal: completeGoal,
+                    deleteGoal: deleteGoal,
+                    isComplete: goal.completionPercentage >= 100.0
+                )
             }
             .padding()
         }
