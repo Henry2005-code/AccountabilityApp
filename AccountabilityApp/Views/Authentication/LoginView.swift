@@ -9,27 +9,29 @@ struct LoginView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Spacer().frame(height: 40)
+            // Reduce top spacing
+            Spacer().frame(height: 20)
 
             // Icon and Title
-            VStack(spacing: 16) { // Increase spacing to balance the layout
+            VStack(spacing: 12) { // Reduced spacing between logo and text
                 Image("Accountability")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 200, height: 200) // Increase the size of the logo
-                    .padding(.bottom, 16) // Add more space below the logo for breathing room
+                    .frame(width: 150, height: 150) // Slightly smaller logo
+                    .padding(.bottom, 8) // Reduced padding below the logo
 
                 Text("Welcome Back")
                     .font(.system(size: 28, weight: .bold)) // Slightly larger and bold font
                     .foregroundColor(Color.purple)
                 
                 Text("Log in to continue your journey")
-                    .font(.system(size: 18)) // Slightly larger for balance
+                    .font(.system(size: 16)) // Slightly smaller for balance
                     .foregroundColor(.gray)
-                    .multilineTextAlignment(.center) // Ensure proper alignment
+                    .multilineTextAlignment(.center)
             }
 
-            Spacer().frame(height: 20)
+            // Remove unnecessary Spacer and adjust spacing
+            Spacer().frame(height: 12)
 
             // Email and Password Fields
             VStack(spacing: 16) {
@@ -118,6 +120,7 @@ struct LoginView: View {
         .padding(.horizontal, 32)
         .padding(.vertical, 16)
     }
+
 }
 
 struct LoginView_Previews: PreviewProvider {
